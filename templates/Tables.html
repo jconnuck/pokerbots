@@ -1,0 +1,11 @@
+  <div class="Tables">
+    <ul>
+    {% for table in tables %}
+      <li>
+        <a href="{{ url_for('join_table', table_id=table.get_id_as_int()) }}">
+          Join Table {{ table.get_id_as_int() }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
