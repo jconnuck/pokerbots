@@ -3,9 +3,6 @@ from random import shuffle
 
 SUITS = ["SPADES", "HEARTS", "DIAMONDS", "CLUBS"]
 
-
-
-
 class Table:
   def __init__(self, deck, players, max_players):
     self.deck = deck

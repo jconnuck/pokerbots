@@ -1,30 +1,23 @@
-class Card:
+from suit import Suit
+from value import Value
+
+class Card(object):
   def __init__(self, suit, value):
+    if not isinstance(suit, Suit):  
+      raise Exception("%s is not a valid Suit" % suit)
+    if not isinstance(value, Value):
+      raise Exception("%s is not a valid card Value" % value)
     self.suit = suit
     self.value = value
-    if suit not in SUITS or value < 1 or value > 13:
-      raise Exception
 
   def __eq__(self, other_card):
-    if type(other_card) is type(self.__class__):
+    if type(other_card) is type(self):
       return self.value == other_card.value
     else:
-      return False
+      raise Exception("Attempt to compare %s with %s" % (self.__class__, other_card.__class__))
 
   def __ne__(self, other_card):
     return not self.__eq__(other_card)
 
   def __str__(self):
-    value = self.value
-    if value == 1:
-      value = "Ace"
-    elif value == 11:
-      value = "Jack"
-    elif value == 12:
-      value = "Queen"
-    elif value == 13:
-      value = "King"
-    else:
-      value = str(value)
-    return_string = value + " of " + self.suit
-    return return_string
+    return "%s of %s" % (self.value, self.suit)

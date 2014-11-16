@@ -1,4 +1,4 @@
-class Player:
+class Player(object):
   def __init__(self, p_id, max_cards):
     self.id = p_id
     self.max_cards = max_cards

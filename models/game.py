@@ -1,8 +1,8 @@
 class Game(object):
-  def __init__(self, players, table, deck):
+  def __init__(self, players, table):
     self.players = players
-    self.table = table
-    self.deck = deck
+    self.table_id = table_id
+    self.deck = []
 
   def start(self):
     pass
